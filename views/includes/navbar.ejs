@@ -1,0 +1,72 @@
+<style>
+  .btn-search {
+  background-color: rgb(216, 23, 23);
+  color: white;
+  display: flex;              /* key line */
+  align-items: center;        /* vertical align */
+  gap: 6px;                   /* space between icon and text */
+  border-radius: 25px;
+  padding: 0 1rem 0 1rem;
+  font-size: 0.8rem;
+}
+
+.btn-search:hover {
+  background-color: red;
+  color: white;
+}
+
+.btn-search i {
+  display: inline;
+  margin-right: 0.5rem;
+  
+}
+.search-inp{
+  font-size: 0.8rem;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-botom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div>
+          <ul class="navbar-nav">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/listings">Explore </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 search-inp" type="search" placeholder="Search destinatons" aria-label="search">
+            <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+          </form>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">Airbnb Your Home </a>
+          <% if(!currUser) {%>
+          <a class="nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <% } %>
+          <% if(currUser) {%>
+          <a class="nav-link" href="/logout">Log out</a>
+          <% } %>
+        </div>
+      </div>
+  </div>
+</nav>
