@@ -13,6 +13,8 @@ module.exports.isLoggedIn=(req,res,next)=>{
   next();
 };
 
+//this is updated middleware
+
 module.exports.saveRedirectUrl=(req,res,next)=>{
   if(req.session.redirectUrl){
     res.locals.redirectUrl=req.session.redirectUrl;
